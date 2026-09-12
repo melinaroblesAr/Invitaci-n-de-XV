@@ -1,0 +1,2754 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mis XV</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #050305;
+            font-family: Georgia, "Times New Roman", serif;
+            overflow-x: hidden;
+        }
+
+  /* =================================
+           SECCIONES
+  ================================= */
+
+        .seccion {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+
+            overflow: hidden;
+        }
+
+
+        /* =================================
+   PRIMERA PANTALLA
+================================= */
+
+.portada {
+    position: relative;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.10),
+            rgba(0,0,0,0.05) 45%,
+            rgba(0,0,0,0.55)
+        ),
+        url("./Invitacionfondo.png") center center / cover no-repeat !important;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+
+    overflow: hidden;
+}
+
+
+/* Oscurecimiento suave de los bordes */
+
+.portada::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 35%,
+            rgba(0,0,0,0.15) 65%,
+            rgba(0,0,0,0.85) 100%
+        );
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+        /* =================================
+           CONTENIDO PORTADA
+        ================================= */
+
+        .contenido {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 430px;
+            text-align: center;
+            color: #eeeeee;
+            padding: 30px 20px;
+        }
+
+
+        .detalle-superior {
+            font-size: 25px;
+            color: #eeeeee;
+            letter-spacing: 8px;
+            margin-bottom: 18px;
+            text-shadow: 0 0 6px #ffffff,
+                0 0 14px #d8d8d8,
+                0 0 25px rgba(255,255,255,0.7);
+        }
+
+        .numero {
+            font-family: "Times New Roman", serif;
+            font-size: clamp(90px, 27vw, 145px);
+            line-height: 0.85;
+            font-weight: normal;
+            color: #eeeeee;
+            text-shadow:
+                1px 1px 0 #999999,
+                -1px -1px 0 #ffffff,
+                0 0 8px rgba(255,255,255,0.9),
+                0 0 20px rgba(220,220,220,0.7),
+                0 0 40px rgba(255,255,255,0.4);
+
+            margin-bottom: 22px;
+        }
+
+        .mis-xv {
+            font-size: 16px;
+            letter-spacing: 7px;
+            text-transform: uppercase;
+            color: #eeeeee;
+            text-shadow:
+                0 0 5px #ffffff,
+                0 0 14px rgba(255,255,255,0.7);
+            margin-bottom: 30px;
+        }
+
+
+        .nombre {
+            font-family: "Times New Roman", serif;
+            font-size: clamp(35px, 10vw, 55px);
+            font-weight: normal;
+            color: #eeeeee;
+            text-shadow:
+                0 0 6px #ffffff,
+                0 0 15px rgba(255,255,255,0.8),
+                0 0 30px rgba(255,255,255,0.45);
+            margin-bottom: 25px;
+        }
+
+        .linea {
+            width: 120px;
+            height: 1px;
+            margin: 0 auto 22px;
+            background: linear-gradient(
+                to right,
+                transparent,
+                #ffffff,
+                #bdbdbd,
+                #ffffff,
+                transparent
+            );
+            box-shadow:
+                0 0 7px rgba(255,255,255,0.9),
+                0 0 15px rgba(255,255,255,0.5);
+        }
+
+
+        .frase {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #eeeeee;
+            text-shadow:
+                0 1px 5px #000000,
+                0 0 10px rgba(0,0,0,0.7);
+            max-width: 310px;
+            margin: auto;
+        }
+
+
+        /* =================================
+           INDICACIÓN PARA DESLIZAR
+        ================================= */
+
+        .deslizar {
+
+            position: absolute;
+
+            z-index: 5;
+
+            bottom: 25px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 7px;
+
+            color: #eeeeee;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            text-decoration: none;
+
+            text-shadow:
+                0 0 5px white,
+                0 0 12px rgba(255,255,255,0.8);
+
+            animation: aparecer 2s ease-in-out infinite;
+        }
+
+
+        .flecha {
+
+            font-size: 24px;
+
+            line-height: 1;
+
+            animation: bajar 1.5s ease-in-out infinite;
+        }
+
+
+        @keyframes bajar {
+
+            0% {
+                transform: translateY(0);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: translateY(7px);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 0.5;
+            }
+
+        }
+
+
+        @keyframes aparecer {
+
+            0%,
+            100% {
+                opacity: 0.65;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+        }
+
+
+        /* =================================
+           SEGUNDA SECCIÓN
+        ================================= */
+
+        .segunda {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: 100vh;
+
+    padding: 70px 25px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 72%,
+            rgba(190, 15, 95, 0.35) 86%,
+            #c41461 100%
+        ),
+
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(120,0,70,0.35),
+            transparent 45%
+        ),
+
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(255,0,120,0.12),
+            transparent 35%
+        ),
+
+        #050305;
+      }
+
+
+        /* =================================
+           LUCES PLATEADAS
+        ================================= */
+
+        .luces {
+
+            position: absolute;
+
+            inset: 0;
+
+            pointer-events: none;
+        }
+
+
+        .luz {
+
+            position: absolute;
+
+            width: 3px;
+            height: 3px;
+
+            background: #ffffff;
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 5px #ffffff,
+                0 0 10px #dddddd,
+                0 0 18px rgba(255,255,255,0.8);
+
+            animation: titilar 3s ease-in-out infinite;
+        }
+
+
+        .l1 { top: 8%; left: 12%; animation-delay: 0s; }
+        .l2 { top: 15%; left: 75%; animation-delay: 1s; }
+        .l3 { top: 25%; left: 30%; animation-delay: 1.8s; }
+        .l4 { top: 32%; left: 88%; animation-delay: 0.7s; }
+        .l5 { top: 42%; left: 8%; animation-delay: 2s; }
+        .l6 { top: 50%; left: 65%; animation-delay: 1.2s; }
+        .l7 { top: 58%; left: 25%; animation-delay: 0.3s; }
+        .l8 { top: 68%; left: 90%; animation-delay: 2.2s; }
+        .l9 { top: 75%; left: 48%; animation-delay: 1.5s; }
+        .l10 { top: 84%; left: 15%; animation-delay: 0.5s; }
+        .l11 { top: 91%; left: 73%; animation-delay: 1.7s; }
+        .l12 { top: 20%; left: 52%; animation-delay: 2.5s; }
+        .l13 { top: 65%; left: 55%; animation-delay: 0.9s; }
+        .l14 { top: 38%; left: 45%; animation-delay: 2.8s; }
+
+
+        @keyframes titilar {
+
+            0%,
+            100% {
+                opacity: 0.25;
+                transform: scale(0.7);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+
+        }
+
+
+        /* =================================
+           CONTENIDO SEGUNDA SECCIÓN
+        ================================= */
+
+        .contenido-segunda {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: 100%;
+
+            max-width: 420px;
+
+            text-align: center;
+
+            color: #eeeeee;
+        }
+
+
+        .ornamento {
+
+            color: #dddddd;
+
+            font-size: 25px;
+
+            letter-spacing: 10px;
+
+            margin-bottom: 25px;
+
+            text-shadow:
+                0 0 8px white,
+                0 0 18px rgba(255,255,255,0.7);
+        }
+
+
+        .titulo-segunda {
+
+            font-size: 30px;
+
+            font-weight: normal;
+
+            color: #eeeeee;
+
+            letter-spacing: 3px;
+
+            text-shadow:
+                0 0 7px white,
+                0 0 18px rgba(255,255,255,0.6);
+
+            margin-bottom: 25px;
+        }
+
+
+        .texto-segunda {
+
+            color: #cfcfcf;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+
+            text-shadow:
+                0 2px 7px black;
+
+            max-width: 320px;
+
+            margin: auto;
+        }
+
+/* =================================
+   ELEMENTOS DE LA SEGUNDA SECCIÓN
+================================= */
+
+.separador {
+
+    width: 160px;
+
+    height: 1px;
+
+    margin: 30px auto 35px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        #bdbdbd,
+        #ffffff,
+        #bdbdbd,
+        transparent
+    );
+
+    box-shadow:
+        0 0 8px rgba(255,255,255,0.7);
+
+}
+
+
+.separador span {
+
+    position: relative;
+
+    display: block;
+
+    width: 25px;
+
+    margin: auto;
+
+    top: -11px;
+
+    background: #090609;
+
+    color: #eeeeee;
+
+    font-size: 18px;
+
+    text-shadow:
+        0 0 7px white,
+        0 0 15px rgba(255,255,255,0.7);
+
+}
+
+
+/* =================================
+   DATOS
+================================= */
+
+.dato {
+
+    margin: 0 auto 32px;
+
+    text-align: center;
+
+}
+
+
+.icono {
+
+    font-size: 16px;
+
+    color: #ffffff;
+
+    margin-bottom: 7px;
+
+    text-shadow:
+        0 0 6px white,
+        0 0 14px rgba(255,255,255,0.8);
+
+}
+
+
+.etiqueta {
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    color: #a9a9a9;
+
+    margin-bottom: 7px;
+
+}
+
+
+.valor {
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 22px;
+
+    letter-spacing: 2px;
+
+    color: #eeeeee;
+
+    text-shadow:
+        0 0 6px rgba(255,255,255,0.8),
+        0 0 14px rgba(255,255,255,0.4);
+
+}
+
+
+/* =================================
+   ADORNO FINAL
+================================= */
+
+.adorno-final {
+
+    margin-top: 45px;
+
+    font-size: 22px;
+
+    letter-spacing: 8px;
+
+    color: #cfcfcf;
+
+    text-shadow:
+        0 0 7px white,
+        0 0 16px rgba(255,255,255,0.7);
+
+}
+
+/* =================================
+   TERCERA PANTALLA
+================================= */
+
+.tercera {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: 100vh;
+
+    padding: 70px 20px;
+
+    overflow: hidden;
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            #c41461 0%,
+            rgba(232, 75, 145, 0.95) 8%,
+            transparent 25%
+        ),
+
+        radial-gradient(
+            ellipse at center,
+            #f6a4c9 18%,
+            #e95791 43%,
+            #c41461 72%,
+            #61052f 100%
+        );
+}
+
+
+/* brillo central */
+
+.tercera::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,0.22),
+            transparent 48%
+        );
+
+    pointer-events: none;
+
+}
+
+
+/* =================================
+   CONTENIDO
+================================= */
+
+.contenido-tercera {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    max-width: 420px;
+
+    text-align: center;
+
+    color: white;
+
+}
+
+
+/* =================================
+   ORNAMENTO
+================================= */
+
+.ornamento-tercera {
+
+    font-size: 22px;
+
+    letter-spacing: 9px;
+
+    color: #eeeeee;
+
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 0 7px white,
+        0 0 18px rgba(255,255,255,0.8);
+
+}
+
+
+/* =================================
+   FRASE
+================================= */
+
+.frase-tercera {
+
+    max-width: 310px;
+
+    margin: auto;
+
+    font-family: Georgia, serif;
+
+    font-size: 21px;
+
+    line-height: 1.6;
+
+    font-style: italic;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 2px 5px rgba(80,0,35,0.8),
+        0 0 12px rgba(255,255,255,0.4);
+
+}
+
+
+/* =================================
+   LÍNEA
+================================= */
+
+.linea-tercera {
+
+    width: 130px;
+
+    height: 1px;
+
+    margin: 28px auto 30px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        #ffffff,
+        #d7d7d7,
+        #ffffff,
+        transparent
+    );
+
+    box-shadow:
+        0 0 8px rgba(255,255,255,0.9);
+
+}
+
+
+/* =================================
+   TÍTULO
+================================= */
+
+.titulo-cuenta {
+
+    font-size: 17px;
+
+    font-weight: normal;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #f4f4f4;
+
+    margin-bottom: 28px;
+
+    text-shadow:
+        0 0 7px white,
+        0 0 15px rgba(255,255,255,0.6);
+
+}
+
+
+/* =================================
+   CUENTA REGRESIVA
+================================= */
+
+.cuenta-regresiva {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    gap: 7px;
+
+}
+
+
+.tiempo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    min-width: 55px;
+
+}
+
+
+.tiempo span {
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 35px;
+
+    line-height: 1;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 7px white,
+        0 0 15px rgba(255,255,255,0.8),
+        0 0 25px rgba(255,255,255,0.5);
+
+}
+
+
+.tiempo small {
+
+    margin-top: 9px;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #eeeeee;
+}
+
+
+.punto {
+    font-size: 28px;
+    color: #eeeeee;
+    text-shadow:
+        0 0 8px white;
+    padding-top: 2px;
+}
+
+
+/* =================================
+   ADORNO
+================================= */
+
+.adorno-cuenta {
+    margin-top: 40px;
+    font-size: 21px;
+    letter-spacing: 8px;
+    color: #eeeeee;
+    text-shadow:
+        0 0 8px white,
+        0 0 18px rgba(255,255,255,0.7);
+}
+
+
+/* =================================
+   MARIPOSAS
+================================= */
+
+.mariposa {
+
+    position: absolute;
+
+    z-index: 2;
+
+    font-size: 25px;
+
+    filter:
+        grayscale(1)
+        brightness(2);
+
+    opacity: 0.7;
+
+    text-shadow:
+        0 0 8px white,
+        0 0 18px rgba(255,255,255,0.8);
+
+    animation:
+        volar 9s ease-in-out infinite;
+}
+
+
+/* posiciones */
+
+.m1 {
+    left: 5%;
+    top: 18%;
+    animation-delay: 0s;
+}
+
+.m2 {
+    right: 8%;
+    top: 12%;
+    font-size: 20px;
+    animation-delay: 2s;
+}
+
+.m3 {
+    left: 12%;
+    bottom: 18%;
+    font-size: 19px;
+    animation-delay: 4s;
+}
+
+.m4 {
+    right: 5%;
+    bottom: 25%;
+    font-size: 28px;
+    animation-delay: 1s;
+}
+
+.m5 {
+    left: 80%;
+    top: 45%;
+    font-size: 16px;
+    animation-delay: 5s;
+}
+
+.m6 {
+    left: 22%;
+    top: 65%;
+    font-size: 17px;
+    animation-delay: 3s;
+}
+
+
+/* movimiento */
+
+@keyframes volar {
+    0% {
+        transform:
+            translate(0, 0)
+            rotate(-8deg);
+    }
+
+    25% {
+        transform:
+            translate(15px, -20px)
+            rotate(8deg);
+    }
+
+    50% {
+        transform:
+            translate(-5px, -35px)
+            rotate(-5deg);
+    }
+
+    75% {
+        transform:
+            translate(-20px, -15px)
+            rotate(7deg);
+    }
+
+    100% {
+        transform:
+            translate(0, 0)
+            rotate(-8deg);
+    }
+
+}
+
+
+/* =================================
+   DESTELLOS
+================================= */
+
+.destellos-rosa span {
+
+    position: absolute;
+
+    z-index: 1;
+
+    color: white;
+
+    font-size: 13px;
+
+    opacity: 0.7;
+
+    text-shadow:
+        0 0 6px white,
+        0 0 15px white;
+
+    animation:
+        destellar 3s ease-in-out infinite;
+}
+
+
+.destellos-rosa span:nth-child(1) {
+    top: 10%;
+    left: 35%;
+}
+
+.destellos-rosa span:nth-child(2) {
+    top: 30%;
+    right: 20%;
+}
+
+.destellos-rosa span:nth-child(3) {
+    top: 55%;
+    left: 7%;
+}
+
+.destellos-rosa span:nth-child(4) {
+    bottom: 15%;
+    right: 30%;
+}
+
+.destellos-rosa span:nth-child(5) {
+    bottom: 30%;
+    left: 45%;
+}
+
+.destellos-rosa span:nth-child(6) {
+    top: 70%;
+    right: 8%;
+}
+
+
+@keyframes destellar {
+
+    0%,
+    100% {
+        opacity: 0.25;
+        transform: scale(0.7);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+
+  }
+
+/* =================================
+   TRANSICIÓN HACIA LA CUARTA
+================================= */
+
+.tercera::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 180px;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(196, 20, 97, 0.35) 45%,
+        #a64057 100%
+    );
+  
+    z-index: 1;
+
+    pointer-events: none;
+}
+                 
+/* =================================
+   CUARTA PANTALLA
+================================= */
+
+      
+.cuarta {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 70px 25px;
+
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.05),
+            rgba(255,255,255,0.03)
+        ),
+        url("fondo-cuarta.png");
+
+    background-size: cover;
+
+    background-position: center;
+  
+
+}
+
+
+/* =================================
+   CONTENIDO
+================================= */
+
+.contenido-cuarta {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    max-width: 350px;
+
+    text-align: center;
+
+    color: #24101b;
+
+    padding: 25px 15px;
+
+}
+
+
+/* =================================
+   ORNAMENTO SUPERIOR
+================================= */
+
+.ornamento-cuarta {
+
+    font-size: 22px;
+
+    letter-spacing: 9px;
+
+    margin-bottom: 25px;
+
+    color: #eeeeee;
+
+    text-shadow:
+        0 0 5px #ffffff,
+        0 0 12px rgba(255,255,255,0.9),
+        0 0 20px rgba(255,255,255,0.7);
+
+}
+
+
+/* =================================
+   FRASE
+================================= */
+
+.frase-cuarta {
+
+    font-family: Georgia, serif;
+
+    font-size: 22px;
+
+    line-height: 1.55;
+
+    font-style: italic;
+
+    color: #321522;
+
+    margin-bottom: 32px;
+
+    text-shadow:
+        0 1px 2px rgba(255,255,255,0.6);
+
+}
+
+
+/* =================================
+   BLOQUES
+================================= */
+
+.detalle-fiesta {
+
+    padding: 8px 10px;
+
+}
+
+
+/* =================================
+   SÍMBOLOS
+================================= */
+
+.simbolo {
+
+    font-size: 24px;
+
+    color: #f4f4f4;
+
+    margin-bottom: 8px;
+
+    text-shadow:
+        0 0 5px #ffffff,
+        0 0 12px rgba(255,255,255,0.9),
+        0 0 20px rgba(255,255,255,0.7);
+
+}
+
+
+/* =================================
+   TÍTULOS
+================================= */
+
+.detalle-fiesta h3 {
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 27px;
+
+    font-weight: normal;
+
+    letter-spacing: 2px;
+
+    color: #250d19;
+
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 1px 3px rgba(255,255,255,0.65);
+
+}
+
+
+/* =================================
+   TEXTO
+================================= */
+
+.detalle-fiesta p {
+
+    max-width: 290px;
+
+    margin: auto;
+
+    font-family: Georgia, serif;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: #3d2430;
+
+    text-shadow:
+        0 1px 2px rgba(255,255,255,0.6);
+
+}
+
+
+/* =================================
+   SEPARADOR
+================================= */
+
+.separador-cuarta {
+
+    width: 150px;
+
+    margin: 27px auto;
+
+    padding-top: 8px;
+
+    border-top: 1px solid rgba(55,20,35,0.55);
+
+    color: #f0f0f0;
+
+    font-size: 18px;
+
+    text-shadow:
+        0 0 6px white,
+        0 0 12px rgba(255,255,255,0.8);
+
+}
+
+
+/* =================================
+   ADORNO FINAL
+================================= */
+
+.adorno-cuarta {
+
+    margin-top: 35px;
+
+    font-size: 21px;
+
+    letter-spacing: 8px;
+
+    color: #eeeeee;
+
+    text-shadow:
+        0 0 6px white,
+        0 0 14px rgba(255,255,255,0.8);
+
+          }
+
+/* =================================
+   TRANSICIÓN CUARTA → QUINTA
+================================= */
+
+.cuarta {
+    position: relative;
+}
+
+
+/* El final de la cuarta se desvanece */
+
+.cuarta::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 220px;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(174,65,95,0.25) 35%,
+        rgba(174,65,95,0.70) 70%,
+        #ae415f 100%
+    );
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+/* =================================
+   QUINTA PANTALLA
+================================= */
+
+.quinta {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 70px 22px;
+
+    overflow: hidden;
+
+
+    background:
+
+        radial-gradient(
+            ellipse at center top,
+            #f4a2bd 0%,
+            #d96789 42%,
+            #ae415f 78%,
+            #7d2744 100%
+        );
+
+}
+
+
+/* =================================
+   BRILLO CENTRAL
+================================= */
+
+.brillo-foto {
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    left: 50%;
+    top: 45%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.22),
+            transparent 65%
+        );
+
+    filter: blur(15px);
+
+    pointer-events: none;
+}
+
+
+/* =================================
+   CONTENIDO
+================================= */
+
+.contenido-quinta {
+
+    position: relative;
+
+    z-index: 3;
+
+    width: 100%;
+
+    max-width: 390px;
+
+    text-align: center;
+
+}
+
+
+/* =================================
+   ORNAMENTO
+================================= */
+
+.ornamento-foto {
+
+    color: #eeeeee;
+
+    font-size: 21px;
+
+    letter-spacing: 8px;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 0 6px white,
+        0 0 14px rgba(255,255,255,0.8);
+
+}
+
+
+/* =================================
+   FRASE
+================================= */
+
+.frase-foto {
+
+    max-width: 300px;
+
+    margin: 0 auto 28px;
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+    font-style: italic;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 2px 6px rgba(80,20,40,0.7),
+        0 0 12px rgba(255,255,255,0.4);
+
+}
+
+
+/* =================================
+   MARCO DE LA FOTO
+================================= */
+
+.marco-foto {
+
+    position: relative;
+
+    width: min(78vw, 310px);
+
+    aspect-ratio: 4 / 5;
+
+    margin: 0 auto;
+
+    padding: 5px;
+
+    border-radius: 50% 50% 45% 45%;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #bdbdbd,
+        #f5f5f5,
+        #969696,
+        #ffffff
+    );
+
+    box-shadow:
+
+        0 0 10px rgba(255,255,255,0.9),
+
+        0 0 25px rgba(255,255,255,0.45),
+
+        0 15px 35px rgba(70,0,25,0.35);
+
+}
+
+
+/* =================================
+   FOTO COMPLETA
+================================= */
+
+.foto-completa {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 360px;
+
+    margin: 0 auto;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 12px rgba(255,255,255,0.55),
+        0 12px 35px rgba(70,0,25,0.35);
+
+}
+
+
+/* FOTO SIN RECORTAR */
+
+.foto-completa img {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+
+}
+
+
+/* SUAVE FUSIÓN CON EL FONDO */
+
+.foto-completa::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 45px;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(174,65,95,0.85)
+    );
+
+    pointer-events: none;
+
+  }
+
+
+/* =================================
+   NOMBRE
+================================= */
+
+.nombre-foto {
+
+    margin-top: 25px;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 35px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 7px white,
+        0 0 17px rgba(255,255,255,0.7);
+
+}
+
+
+/* =================================
+   ADORNO
+================================= */
+
+.frase-foto,
+.nombre-foto,
+.ornamento-foto {
+
+    animation: aparecerFoto 1.5s ease-out both;
+
+}
+
+
+.nombre-foto {
+    animation-delay: 0.25s;
+}
+
+.adorno-foto {
+    animation: aparecerFoto 1.8s ease-out 0.4s both;
+}
+
+@keyframes aparecerFoto {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(25px)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+/* =================================
+   UBICACIÓN
+================================= */
+
+.ubicacion {
+
+    margin-top: 38px;
+
+    text-align: center;
+
+}
+
+
+/* detalle */
+
+.icono-mapa {
+
+    font-size: 22px;
+
+    color: #ffffff;
+
+    margin-bottom: 8px;
+
+    text-shadow:
+        0 0 6px white,
+        0 0 14px rgba(255,255,255,0.8);
+
+}
+
+
+/* título */
+
+.ubicacion h3 {
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
+
+    font-weight: normal;
+
+    color: #ffffff;
+
+    margin-bottom: 8px;
+
+    text-shadow:
+        0 1px 5px rgba(80,0,35,0.8),
+        0 0 10px rgba(255,255,255,0.5);
+
+}
+
+
+/* texto divertido */
+
+.ubicacion p {
+
+    max-width: 290px;
+
+    margin: 0 auto 18px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #f5e9ee;
+
+    text-shadow:
+        0 2px 5px rgba(70,0,30,0.7);
+
+}
+
+
+/* botón */
+
+.boton-mapa {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 11px 24px;
+
+    border: 1px solid rgba(255,255,255,0.75);
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.12);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    box-shadow:
+        0 0 10px rgba(255,255,255,0.25),
+
+        inset 0 0 12px rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(4px);
+
+    transition: 0.3s ease;
+
+}
+
+
+.boton-mapa span {
+
+    font-size: 12px;
+
+}
+
+
+.boton-mapa:active {
+
+    transform: scale(0.95);
+
+    background: rgba(255,255,255,0.25);
+
+  }
+
+
+   ========================= */
+
+.etiqueta-regalo {
+    position: relative;
+
+    width: 245px;
+    min-height: 590px;
+
+    padding: 55px 18px 65px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #c65a77 0%,
+            #ad415f 55%,
+            #9c3855 100%
+        );
+
+    border-left: 1px solid rgba(238,238,238,.5);
+    border-right: 1px solid rgba(238,238,238,.5);
+    border-top: 1px solid rgba(238,238,238,.5);
+
+    box-shadow:
+        0 0 20px rgba(0,0,0,.45),
+        0 20px 40px rgba(0,0,0,.55);
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 88%,
+        50% 100%,
+        0 88%
+    );
+}
+
+
+/* detalles decorativos de la etiqueta */
+
+.etiqueta-regalo::before {
+    content: "✧";
+
+    position: absolute;
+    top: 85px;
+    right: 18px;
+
+    color: rgba(255,255,255,.75);
+
+    font-size: 17px;
+}
+
+.etiqueta-regalo::after {
+    content: "✦";
+
+    position: absolute;
+    bottom: 85px;
+    left: 20px;
+
+    color: rgba(255,255,255,.8);
+
+    font-size: 16px;
+}
+
+/* =========================
+   SEXTA PANTALLA
+   ========================= */
+
+.sexta {
+    position: relative;
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ae415f 0%,
+            #4a1828 13%,
+            #090407 32%,
+            #000000 100%
+        );
+}
+
+
+/* =========================
+   ETIQUETA
+   ========================= */
+
+.etiqueta-regalo {
+    position: absolute;
+
+    z-index: 4;
+
+    /* NACE DESDE EL BORDE DERECHO */
+    top: 0;
+    right: 0;
+
+    width: 155px;
+    height: 610px;
+
+    padding: 65px 16px 70px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #c65a77 0%,
+            #ad415f 55%,
+            #96364f 100%
+        );
+
+    border-left: 1px solid rgba(238,238,238,.55);
+    border-bottom: 1px solid rgba(238,238,238,.45);
+
+    box-shadow:
+        -8px 15px 30px rgba(0,0,0,.45);
+
+    /*
+       Forma de etiqueta:
+       recta arriba y laterales,
+       punta en V abajo
+    */
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 88%,
+        50% 100%,
+        0 88%
+    );
+}
+
+
+/* pequeño detalle superior */
+
+.etiqueta-regalo::before {
+    content: "✧";
+
+    position: absolute;
+
+    top: 105px;
+    right: 14px;
+
+    font-size: 14px;
+
+    color: rgba(255,255,255,.75);
+}
+
+
+/* detalle inferior */
+
+.etiqueta-regalo::after {
+    content: "✦";
+
+    position: absolute;
+
+    bottom: 90px;
+    left: 15px;
+
+    font-size: 14px;
+
+    color: rgba(255,255,255,.75);
+}
+
+
+/* =========================
+   CONTENIDO DE LA ETIQUETA
+   ========================= */
+
+.adorno-etiqueta {
+    margin-bottom: 28px;
+
+    font-size: 19px;
+
+    color: #eeeeee;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 12px rgba(255,255,255,.8);
+}
+
+
+.titulo-regalo {
+    margin: 0 0 23px;
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+    line-height: 1.45;
+
+    font-style: italic;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 1px 3px rgba(0,0,0,.5);
+}
+
+
+.texto-regalo {
+    margin: 0;
+
+    font-family: Georgia, serif;
+
+    font-size: 12px;
+    line-height: 1.65;
+
+    color: #f8e9ed;
+}
+
+
+.linea-regalo {
+    width: 80px;
+    height: 1px;
+
+    margin: 23px auto 17px;
+
+    background: rgba(255,255,255,.65);
+}
+
+
+.alias-titulo {
+    margin: 0 0 8px;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #f4f4f4;
+}
+
+
+.alias-box {
+    width: 115px;
+
+    margin: auto;
+
+    padding: 8px 5px;
+
+    box-sizing: border-box;
+
+    background: rgba(0,0,0,.28);
+
+    border: 1px solid rgba(255,255,255,.6);
+
+    border-radius: 4px;
+}
+
+
+.alias-box span {
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: .5px;
+
+    color: #ffffff;
+
+    word-break: break-all;
+}
+
+
+.adorno-final {
+    position: absolute;
+
+    bottom: 54px;
+
+    left: 0;
+    right: 0;
+
+    font-size: 17px;
+
+    color: #eeeeee;
+
+    text-shadow:
+        0 0 6px white;
+}
+
+
+/* =========================
+   CONFIRMACIÓN
+   ========================= */
+
+.confirmacion {
+    position: absolute;
+
+    z-index: 3;
+
+    left: 28px;
+    right: 175px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    text-align: center;
+}
+
+
+.simbolo-confirmacion {
+    margin-bottom: 13px;
+
+    font-size: 27px;
+
+    color: #eeeeee;
+
+    text-shadow:
+        0 0 6px white,
+        0 0 12px rgba(255,255,255,.8);
+}
+
+
+.confirmacion h3 {
+    margin: 0 0 15px;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 21px;
+
+    font-weight: normal;
+
+    letter-spacing: 1px;
+
+    color: #ffffff;
+}
+
+
+.confirmacion p {
+    margin: auto;
+
+    max-width: 180px;
+
+    font-family: Georgia, serif;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: #dfcbd2;
+}
+
+
+.confirmacion strong {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 15px;
+
+    color: #ffffff;
+}
+
+
+.adorno-confirmacion {
+    margin-top: 23px;
+
+    color: #eeeeee;
+
+    font-size: 17px;
+
+    text-shadow:
+        0 0 6px white;
+}
+
+
+/* =========================
+   BRILLOS
+   ========================= */
+
+.brillos-sexta {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+}
+
+
+.brillos-sexta span {
+    position: absolute;
+
+    color: #eeeeee;
+
+    font-size: 16px;
+
+    opacity: .7;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 12px rgba(255,255,255,.8);
+
+    animation: brilloSexta 3s infinite ease-in-out;
+}
+
+
+.brillos-sexta span:nth-child(1) {
+    top: 18%;
+    left: 12%;
+}
+
+.brillos-sexta span:nth-child(2) {
+    top: 35%;
+    left: 43%;
+    animation-delay: .8s;
+}
+
+.brillos-sexta span:nth-child(3) {
+    top: 55%;
+    left: 10%;
+    animation-delay: 1.5s;
+}
+
+.brillos-sexta span:nth-child(4) {
+    bottom: 20%;
+    left: 35%;
+    animation-delay: .5s;
+}
+
+.brillos-sexta span:nth-child(5) {
+    bottom: 13%;
+    left: 12%;
+    animation-delay: 1.8s;
+}
+
+.brillos-sexta span:nth-child(6) {
+    top: 68%;
+    left: 48%;
+    animation-delay: 2.2s;
+}
+
+
+@keyframes brilloSexta {
+    0%,100% {
+        opacity: .3;
+        transform: scale(.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+  }
+
+      
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         PRIMERA PANTALLA
+    ================================= -->
+
+    <section class="seccion portada" id="inicio">
+
+
+        <div class="contenido">
+
+            <div class="detalle-superior">
+                ✧
+            </div>
+
+            <div class="numero">
+                XV
+            </div>
+
+            <div class="mis-xv">
+                Mis quince años
+            </div>
+
+            <div class="nombre">
+                Bianca Robles
+            </div>
+
+            <div class="linea"></div>
+
+            <p class="frase">
+                Hay momentos que se convierten
+                en recuerdos para toda la vida.
+            </p>
+
+        </div>
+
+
+        <!-- DESLIZAR -->
+
+        <a href="#invitacion" class="deslizar">
+
+            <span>
+                Deslizá para continuar
+            </span>
+
+            <span class="flecha">
+                ↓
+            </span>
+
+        </a>
+
+
+    </section>
+
+
+
+    <!-- =================================
+     SEGUNDA PANTALLA
+================================= -->
+
+<section class="seccion segunda" id="invitacion">
+
+
+    <!-- LUCES -->
+
+    <div class="luces">
+
+        <span class="luz l1"></span>
+        <span class="luz l2"></span>
+        <span class="luz l3"></span>
+        <span class="luz l4"></span>
+        <span class="luz l5"></span>
+        <span class="luz l6"></span>
+        <span class="luz l7"></span>
+        <span class="luz l8"></span>
+        <span class="luz l9"></span>
+        <span class="luz l10"></span>
+        <span class="luz l11"></span>
+        <span class="luz l12"></span>
+        <span class="luz l13"></span>
+        <span class="luz l14"></span>
+
+    </div>
+
+
+    <!-- CONTENIDO -->
+
+    <div class="contenido-segunda">
+
+
+        <div class="ornamento">
+            ✦ ✧ ✦
+        </div>
+
+
+        <h2 class="titulo-segunda">
+            Un dia para recordar
+        </h2>
+
+
+        <p class="texto-segunda">
+    Hay momentos que soñamos desde pequeñas...
+    y hoy quiero compartir este día tan especial
+    con las personas que hacen especial mi vida.
+    <br><br>
+    <span class="te-invito">
+        Te invito a celebrar conmigo mis XV años.
+    </span>
+        </p>
+
+
+        <!-- SEPARADOR -->
+
+        <div class="separador">
+            <span>✧</span>
+        </div>
+
+
+        <!-- FECHA -->
+
+        <div class="dato">
+
+            <div class="icono">
+                ✦
+            </div>
+
+            <div class="etiqueta">
+                Fecha
+            </div>
+
+            <div class="valor">
+                04 · 10 · 2026
+            </div>
+
+        </div>
+
+
+        <!-- HORA -->
+
+        <div class="dato">
+
+            <div class="icono">
+                ✧
+            </div>
+
+            <div class="etiqueta">
+                Hora
+            </div>
+
+            <div class="valor">
+                12pm - 20pm
+            </div>
+
+        </div>
+
+
+        <!-- LUGAR -->
+
+        <div class="dato">
+
+            <div class="icono">
+                ✦
+            </div>
+
+            <div class="etiqueta">
+                Lugar
+            </div>
+
+            <div class="valor">
+                complejo "El Bosque"
+            </div>
+
+        </div>
+
+
+        <!-- ADORNO FINAL -->
+
+        <div class="adorno-final">
+            ❧ ✧ ❧
+        </div>
+
+
+    </div>
+
+
+</section>
+
+<!-- =================================
+     TERCERA PANTALLA
+================================= -->
+
+<section class="seccion tercera" id="cuenta">
+
+
+    <!-- MARIPOSAS -->
+
+    <div class="mariposas">
+        <span class="mariposa m1">🦋</span>
+        <span class="mariposa m2">🦋</span>
+        <span class="mariposa m3">🦋</span>
+        <span class="mariposa m4">🦋</span>
+        <span class="mariposa m5">🦋</span>
+        <span class="mariposa m6">🦋</span>
+
+    </div>
+
+
+    <!-- DESTELLOS -->
+
+    <div class="destellos-rosa">
+        <span>✦</span>
+        <span>✧</span>
+        <span>✦</span>
+        <span>✧</span>
+        <span>✦</span>
+        <span>✧</span>
+
+    </div>
+
+
+    <!-- CONTENIDO -->
+
+    <div class="contenido-tercera">
+
+        <div class="ornamento-tercera">
+            ✦ ✧ ✦
+        </div>
+        <p class="frase-tercera">
+            Cada segundo nos acerca
+            a un dia para recordar.
+        </p>
+
+        <div class="linea-tercera"></div>
+        <h2 class="titulo-cuenta">
+            Falta muy poquito...
+        </h2>
+
+
+        <!-- CUENTA REGRESIVA -->
+
+        <div class="cuenta-regresiva">
+            <div class="tiempo">
+                <span id="dias">
+                    00
+                </span>
+                <small>
+                    Días
+                </small>
+            </div>
+            <div class="punto"> :
+            </div>
+            <div class="tiempo">
+                <span id="horas"> 00
+                </span>
+                <small>
+                    Horas
+                </small>
+            </div>
+            <div class="punto">
+                :
+            </div>
+            <div class="tiempo">
+                <span id="minutos">
+                    00
+                </span>
+                <small>
+                    Minutos
+                </small>
+            </div>
+            <div class="punto">
+                :
+            </div>
+            <div class="tiempo">
+                <span id="segundos">
+                    00
+                </span>
+                <small>
+                    Segundos
+                </small>
+            </div>
+        </div>
+        <div class="adorno-cuenta">
+    ❧ ✧ ❧
+</div>
+
+
+<!-- =================================
+     UBICACIÓN
+================================= -->
+
+<div class="ubicacion">
+
+    <div class="icono-mapa">
+        ✧
+    </div>
+
+    <h3>
+        ¿Y para que no se pierdan?
+    </h3>
+
+    <p>
+        Queremos que lleguen a la fiesta,
+        no que terminen dando vueltas 😜
+    </p>
+
+    <a
+    href="https://www.google.com/maps?q=-27.7497802,-64.2338674"
+    target="_blank"
+    class="boton-mapa"
+>
+    Ver ubicación
+    <span>✦</span>
+    </a>
+
+</div>
+    </div>
+</section>
+
+<script>
+
+    // =================================
+    // CUENTA REGRESIVA
+    // =================================
+
+    const fechaXV = new Date("2026-10-04T12:00:00-03:00").getTime();
+    function actualizarCuenta() {
+        const ahora = new Date().getTime();
+        const diferencia = fechaXV - ahora;
+
+
+        // Si llegó el momento
+
+        if (diferencia <= 0) {
+
+  document.getElementById("dias").textContent = "00";
+document.getElementById("horas").textContent = "00";
+document.getElementById("minutos").textContent = "00";
+document.getElementById("segundos").textContent = "00";
+            document.querySelector(".titulo-cuenta").textContent =
+                "¡Llegó el gran día!";
+
+            return;
+        }
+
+
+        // Cálculos
+
+        const dias = Math.floor(
+            diferencia / (1000 * 60 * 60 * 24)
+        );
+        const horas = Math.floor(
+            (diferencia / (1000 * 60 * 60)) % 24  );
+        const minutos = Math.floor(
+            (diferencia / (1000 * 60)) % 60  );
+        const segundos = Math.floor(
+            (diferencia / 1000) % 60 );
+
+
+        // Mostrar
+      document.getElementById("dias").textContent =
+            String(dias).padStart(2, "0");
+
+document.getElementById("horas").textContent =
+            String(horas).padStart(2, "0");
+
+document.getElementById("minutos").textContent =  String(minutos).padStart(2, "0");
+
+document.getElementById("segundos").textContent = String(segundos).padStart(2, "0");
+    }
+
+
+    // Actualizar inmediatamente
+    actualizarCuenta();
+
+    // Actualizar cada segundo
+    setInterval(actualizarCuenta, 1000);
+
+          </script>
+  
+</body>
+
+<!-- =================================
+     CUARTA PANTALLA
+================================= -->
+
+<section class="seccion cuarta" id="importante">
+
+    <div class="luces">
+        <span class="luz l1"></span>
+        <span class="luz l2"></span>
+        <span class="luz l3"></span>
+        <span class="luz l4"></span>
+        <span class="luz l5"></span>
+        <span class="luz l6"></span>
+    </div>
+
+    <div class="contenido-cuarta">
+        <div class="ornamento-cuarta">
+            ✦ ✧ ✦
+        </div>
+
+        <p class="frase-cuarta">
+            Para disfrutar aún más
+            de este día...
+        </p>
+
+        <div class="detalle-fiesta">
+            <div class="simbolo">
+                ♡
+            </div>
+            <h3>
+                ¡Hay pileta!
+            </h3>
+            <p>
+                No olvides traer tu traje
+                de baño para disfrutar
+                de una tarde increíble.
+            </p>
+        </div>
+
+        <div class="separador-cuarta">
+            ✧
+        </div>
+
+        <div class="detalle-fiesta">
+            <div class="simbolo">
+                ♡
+            </div>
+            <h3>
+                Almuerzo y merienda
+            </h3>
+            <p>
+                Cada invitado debe llevar su comida y bebida.
+                Traé lo que quieras a tu gusto para disfrutar de un almuerzo juntos.
+            </p>
+        </div>
+
+        <div class="adorno-cuarta">
+            ❧ ✧ ❧
+        </div>
+    </div>
+
+</section>
+
+<!-- =================================
+     QUINTA PANTALLA - FOTO
+================================= -->
+
+<section class="seccion quinta" id="foto">
+
+    <div class="brillo-foto"></div>
+
+    <div class="contenido-quinta">
+
+        <div class="ornamento-foto">
+            ✦ ✧ ✦
+        </div>
+
+
+        <p class="frase-foto">
+            Y así comienza una nueva etapa...
+        </p>
+
+
+        <div class="foto-completa">
+
+    <img src="foto-hermana.png" alt="Foto de la quinceañera">
+
+        </div>
+
+
+        <div class="nombre-foto">
+            Bianca
+        </div>
+
+
+        <div class="adorno-foto">
+            ❧ ✧ ❧
+        </div>
+
+    </div>
+  
+</section>
+
+  <!-- SEXTA PANTALLA -->
+<section class="seccion sexta" id="regalo">
+
+    <div class="brillos-sexta">
+        <span>✦</span>
+        <span>✧</span>
+        <span>·</span>
+        <span>✦</span>
+        <span>✧</span>
+        <span>·</span>
+    </div>
+
+    <div class="contenedor-sexta">
+
+        <!-- ETIQUETA -->
+        <div class="etiqueta-regalo">
+
+            <div class="adorno-etiqueta">✦ ✧ ✦</div>
+
+            <p class="titulo-regalo">
+                Tu presencia es<br>
+                mi mayor regalo...
+            </p>
+
+            <p class="texto-regalo">
+                pero si deseas hacerme<br>
+                un presente, también será<br>
+                recibido con mucho cariño.
+            </p>
+
+            <div class="linea-regalo"></div>
+
+            <p class="alias-titulo">Alias</p>
+
+            <div class="alias-box">
+                <span>Bianca.delfina.232</span>
+            </div>
+
+            <div class="adorno-final">❧ ✧ ❧</div>
+
+        </div>
+
+        <!-- CONFIRMACIÓN -->
+        <div class="confirmacion">
+
+            <div class="simbolo-confirmacion">♡</div>
+
+            <h3>Confirmá tu presencia</h3>
+
+            <p>
+                Para poder preparar todo
+                con antelacion, confirmá
+                tu asistencia antes del
+                <strong>25-09-2026</strong>.
+            </p>
+
+            <div class="adorno-confirmacion">
+                ✦
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+  
+</html>
