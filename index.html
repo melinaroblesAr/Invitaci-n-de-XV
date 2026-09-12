@@ -1997,10 +1997,20 @@
     border: 1px solid rgba(255,255,255,.6);
 
     border-radius: 4px;
+
+    cursor: pointer;
+
+    transition: .25s ease;
 }
 
+.alias-box:active {
+    transform: scale(.94);
+    background: rgba(255,255,255,.18);
+}
 
 .alias-box span {
+    display: block;
+
     font-family: Arial, sans-serif;
 
     font-size: 10px;
@@ -2010,6 +2020,40 @@
     color: #ffffff;
 
     word-break: break-all;
+}
+
+.alias-box small {
+    display: block;
+
+    margin-top: 6px;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    color: rgba(255,255,255,.75);
+}
+
+#mensajeAlias {
+    opacity: 0;
+
+    margin-top: 8px;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    color: #ffffff;
+
+    transition: opacity .3s ease;
+}
+
+#mensajeAlias.mostrar {
+    opacity: 1;
 }
 
 
@@ -2578,6 +2622,19 @@ document.getElementById("segundos").textContent = String(segundos).padStart(2, "
     // Actualizar cada segundo
     setInterval(actualizarCuenta, 1000);
 
+function copiarAlias() {
+    const alias = document.getElementById("aliasTexto").textContent.trim();
+    const mensaje = document.getElementById("mensajeAlias");
+
+    navigator.clipboard.writeText(alias).then(() => {
+        mensaje.classList.add("mostrar");
+
+        setTimeout(() => {
+            mensaje.classList.remove("mostrar");
+        }, 2000);
+    });
+}
+    
           </script>
   
 </body>
@@ -2719,9 +2776,12 @@ document.getElementById("segundos").textContent = String(segundos).padStart(2, "
 
             <p class="alias-titulo">Alias</p>
 
-            <div class="alias-box">
-                <span>Bianca.delfina.232</span>
-            </div>
+<div class="alias-box" onclick="copiarAlias()">
+    <span id="aliasTexto">Bianca.delfina.232</span>
+    <small>✦ Tocar para copiar ✦</small>
+</div>
+
+<div id="mensajeAlias">¡Alias copiado! ✨</div>
 
             <div class="adorno-final">❧ ✧ ❧</div>
 
