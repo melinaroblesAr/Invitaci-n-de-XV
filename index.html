@@ -20,11 +20,13 @@
         }
 
         body {
+
             background: #050305;
             font-family: Georgia, "Times New Roman", serif;
             overflow-x: hidden;
         }
 
+        
   /* =================================
            SECCIONES
   ================================= */
@@ -2245,7 +2247,9 @@
 
 
 <body>
-
+<audio id="musica" loop preload="auto">
+    <source src="piel-canela.mp4" type="audio/mp4">
+</audio>
 
     <!-- =================================
          PRIMERA PANTALLA
@@ -2561,6 +2565,9 @@
 
 </div>
     </div>
+
+
+    
 </section>
 
 <script>
@@ -2634,6 +2641,21 @@ function copiarAlias() {
         }, 2000);
     });
 }
+
+
+    const musica = document.getElementById("musica");
+
+let musicaIniciada = false;
+
+document.addEventListener("click", function () {
+    if (!musicaIniciada) {
+        musica.play().then(() => {
+            musicaIniciada = true;
+        }).catch(() => {
+            // El navegador bloqueó la reproducción.
+        });
+    }
+});
     
           </script>
   
