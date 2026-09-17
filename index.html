@@ -2246,11 +2246,6 @@
 </head>
 
 
-<body>
-<audio id="musica" loop preload="auto">
-    <source src="piel-canela.mp4" type="audio/mp4">
-</audio>
-
     <!-- =================================
          PRIMERA PANTALLA
     ================================= -->
@@ -2642,20 +2637,6 @@ function copiarAlias() {
     });
 }
 
-
-    const musica = document.getElementById("musica");
-
-let musicaIniciada = false;
-
-document.addEventListener("click", function () {
-    if (!musicaIniciada) {
-        musica.play().then(() => {
-            musicaIniciada = true;
-        }).catch(() => {
-            // El navegador bloqueó la reproducción.
-        });
-    }
-});
     
           </script>
   
